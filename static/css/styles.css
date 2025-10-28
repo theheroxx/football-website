@@ -1,0 +1,36 @@
+form {
+    display: inline-block;
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  input {
+    width: 200px;
+    padding: 5px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .messages {
+    list-style: none;
+    color: red;
+  }
+ 
+  h2{
+    color: #007bff;
+  }
+  .site-logo {
+    width: 400px;    /* پهنای لوگو */
+    height: auto;    /* نسبت تصویر حفظ بشه */
+    display: block;  /* وسط‌چین کردن راحت‌تر */
+    margin: 20px auto; /* وسط صفحه */
+  }
+  
+
+  
