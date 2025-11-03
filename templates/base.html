@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}مینی‌گیم‌ها{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body dir="rtl">
+  <header>
+    <nav>
+      <a href="{% url 'home' %}">خانه</a> |
+      <a href="{% url 'penalty_shootout' %}">Penalty</a> |
+      <a href="{% url 'free_kick_challenge' %}">Free Kick</a> |
+      <a href="{% url 'keeper_reflex' %}">Keeper Reflex</a> |
+      {% if user.is_authenticated %}
+        <a href="{% url 'my_profile' %}">پروفایل من</a> |
+        <a href="{% url 'logout' %}">خروج</a>
+      {% else %}
+        <a href="{% url 'login' %}">ورود</a> |
+        <a href="{% url 'register' %}">ثبت‌نام</a>
+      {% endif %}
+    </nav>
+  
+        
+        
+     
+  </header>
+
+  <main>
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    
+
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    <p>© 2025 MiniGames — همه حقوق محفوظ است</p>
+  </footer>
+</body>
+</html>

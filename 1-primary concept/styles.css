@@ -1,0 +1,390 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1a3a6b;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0.5rem 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #2a5a9b;
+}
+
+footer {
+    background-color: #1a3a6b;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Home Page Styles */
+.games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.game-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-card h2 {
+    color: #1a3a6b;
+    margin-bottom: 0.5rem;
+}
+
+.play-button {
+    display: inline-block;
+    background-color: #2a5a9b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.play-button:hover {
+    background-color: #1a3a6b;
+}
+
+.live-stats {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.live-stats span {
+    display: block;
+    margin: 0.2rem 0;
+}
+
+/* Game Page Styles */
+.game-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-area {
+    grid-column: 1;
+}
+
+.game-canvas {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.placeholder {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.scoreboard, .game-chat {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.scoreboard h2, .game-chat h2 {
+    color: #1a3a6b;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-score, .global-stats {
+    flex: 1;
+}
+
+.score-value, .average-score, .high-score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2a5a9b;
+    margin: 0.5rem 0;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.message {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.chat-input button {
+    padding: 0.5rem 1rem;
+    background-color: #2a5a9b;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #1a3a6b;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .game-container {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 0.3rem 0;
+    }
+}
+
+/* Profile Page Styles */
+.profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.profile-info, .profile-stats, 
+.challenge-experience, .medals-accomplished {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detail label {
+    font-weight: bold;
+    min-width: 100px;
+    color: #555;
+}
+
+.detail .value {
+    flex-grow: 1;
+}
+
+.edit-btn {
+    background-color: #2a5a9b;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    margin-left: 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.edit-btn:hover {
+    background-color: #1a3a6b;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1a3a6b;
+}
+
+.challenges-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.challenge {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #2a5a9b;
+}
+
+.challenge h3 {
+    color: #1a3a6b;
+    margin-bottom: 0.5rem;
+}
+
+.challenge-stats {
+    display: flex;
+    gap: 1.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.medals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.medal {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.medal-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.medal-icon.gold {
+    background-color: #ffd70033;
+}
+.medal-icon.silver {
+    background-color: #c0c0c033;
+}
+.medal-icon.bronze {
+    background-color: #cd7f3233;
+}
+
+.medal-info h3 {
+    color: #1a3a6b;
+    margin-bottom: 0.3rem;
+}
+
+.medal-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.profile-link {
+    background-color: #4CAF50;
+}
+
+.profile-link:hover, .profile-link.active {
+    background-color: #3e8e41;
+}
+
+@media (max-width: 768px) {
+    .profile-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid, .medals-grid {
+        grid-template-columns: 1fr;
+    }
+}

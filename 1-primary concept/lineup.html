@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Football Line-up</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .prediction-bar {
+  display: none;
+  position: absolute;
+  top: -50px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+.player:hover .prediction-bar {
+  display: block;
+}
+
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin-top: 2rem;
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+
+    .formation-select {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .formation-select button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .formation-select button.active {
+      background-color: #4caf50;
+    }
+
+    .team {
+      display: none;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .team.active {
+      display: flex;
+    }
+
+    .line {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .player {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: none;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .player:hover {
+      transform: scale(1.05);
+    }
+
+    .player img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-bottom: 0.3rem;
+    }
+
+    .player .name {
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .stat-circle {
+      background-color: #333;
+      padding: 0.3rem 0.5rem;
+      border-radius: 50%;
+      font-size: 0.7rem;
+      min-width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Match Line-up Viewer</div>
+    <div class="formation-select">
+      <button onclick="switchTeam('liverpool')" class="active">Liverpool</button>
+      <button onclick="switchTeam('brighton')">Brighton</button>
+    </div>
+
+
+    <div class="team active" id="liverpool">
+      <div class="line">
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Kelleher</div><div class="stats"><span>Grade: 7.2</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+      </div>
+      <div class="line">
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Bradley</div><div class="stats"><span>Grade: 7.4</span><span>Goals: 0</span><span>Assists: 1</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Quansah</div><div class="stats"><span>Grade: 7.3</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Van Dijk</div><div class="stats"><span>Grade: 8.0</span><span>Goals: 1</span><span>Assists: 0</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Tsimikas</div><div class="stats"><span>Grade: 6.9</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+      </div>
+      <div class="line">
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Endo</div><div class="stats"><span>Grade: 7.1</span><span>Goals: 0</span><span>Assists: 1</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Mac Allister</div><div class="stats"><span>Grade: 7.5</span><span>Goals: 0</span><span>Assists: 1</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Elliott</div><div class="stats"><span>Grade: 7.0</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+      </div>
+      <div class="line">
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="Salah.png"><div class="name">Salah</div><div class="stats"><span>Grade: 8.5</span><span>Goals: 1</span><span>Assists: 1</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="Jota.png"><div class="name">Jota</div><div class="stats"><span>Grade: 7.2</span><span>Goals: 0</span><span>Assists: 1</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="Gakpo.png"><div class="name">Gakpo</div><div class="stats"><span>Grade: 7.3</span><span>Goals: 1</span><span>Assists: 0</span></div></div>
+      </div>
+    </div>
+
+    <div class="team" id="brighton">
+      <div class="line">
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Verbruggen</div><div class="stats"><span>Grade: 6.8</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+      </div>
+      <div class="line">
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Lamptey</div><div class="stats"><span>Grade: 6.9</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">van Hecke</div><div class="stats"><span>Grade: 6.8</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Webster</div><div class="stats"><span>Grade: 7.0</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Estupiñán</div><div class="stats"><span>Grade: 6.5</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+      </div>
+      <div class="line">
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Baleba</div><div class="stats"><span>Grade: 6.7</span><span>Goals: 0</span><span>Assists: 1</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Ayari</div><div class="stats"><span>Grade: 6.6</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Gruda</div><div class="stats"><span>Grade: 6.9</span><span>Goals: 0</span><span>Assists: 1</span></div></div>
+      </div>
+      <div class="line">
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Minteh</div><div class="stats"><span>Grade: 7.1</span><span>Goals: 1</span><span>Assists: 0</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Welbeck</div><div class="stats"><span>Grade: 7.0</span><span>Goals: 1</span><span>Assists: 0</span></div></div>
+        <div class="player" style="position: relative;">
+  <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div><img src="https://via.placeholder.com/60"><div class="name">Wieffer</div><div class="stats"><span>Grade: 6.8</span><span>Goals: 0</span><span>Assists: 0</span></div></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="player" style="position: relative;">
+    <div class="prediction-bar">Your prediction: 1 goal, 1 assist<br>In your team? Yes</div>
+    <img src="player.jpg" alt="Player Name" />
+    <div class="name">Player Name</div>
+    <div class="stats">
+      <div class="stat-circle">7.8</div>
+      <div class="stat-circle">1G</div>
+      <div class="stat-circle">1A</div>
+    </div>
+  </div>
+  
+
+  <script>
+    function switchTeam(teamId) {
+      document.querySelectorAll('.team').forEach(el => el.classList.remove('active'));
+      document.getElementById(teamId).classList.add('active');
+
+      document.querySelectorAll('.formation-select button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.formation-select button[onclick*='${teamId}']`).classList.add('active');
+    }
+  </script>
+</body>
+</html>

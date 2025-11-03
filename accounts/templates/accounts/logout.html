@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}خروج{% endblock %}
+{% block content %}
+<h1>خروج از حساب</h1>
+<p>آیا مطمئن هستید که می‌خواهید خارج شوید؟</p>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit">بله، خارج شو</button>
+</form>
+{% endblock %}

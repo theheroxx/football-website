@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+venv/
+env/
+
+# Node / React
+frontend/node_modules/
+frontend/.vite/
+npm-debug.log*
+yarn-*.log
+
+# Django
+staticfiles/
+media/
+
+# Allow built React files (we’ll force‑add them)
+!frontend/dist/
